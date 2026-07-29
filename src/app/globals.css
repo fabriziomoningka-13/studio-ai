@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text-main font-body antialiased;
+    /* Ambient glow halus di kanan-atas — signature depth, bukan dekorasi ramai */
+    background-image:
+      radial-gradient(600px circle at 85% -5%, rgba(31, 174, 147, 0.14), transparent 60%),
+      radial-gradient(500px circle at 0% 100%, rgba(127, 231, 196, 0.06), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3 {
+    @apply font-heading;
+  }
+
+  code, .mono {
+    @apply font-mono;
+  }
+
+  /* Fokus ring jelas untuk aksesibilitas — Bagian 6.4 & 17 */
+  :focus-visible {
+    outline: 2px solid theme('colors.secondary');
+    outline-offset: 2px;
+  }
+}
