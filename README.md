@@ -1,11 +1,10 @@
 # Studio AI
 
-> Generator copy & tema landing page instan, ditenagai Claude API — dibuat sebagai project portofolio.
+> Generator copy & tema landing page instan, ditenagai Claude API
 
 ![Studio AI cover](public/og-image.png)
 
-**Live demo:** _[isi link Vercel kamu di sini setelah deploy, mis. https://studio-ai.vercel.app]_
-**Source code:** repo ini
+**Live demo:** [studio-ai-steel.vercel.app](https://studio-ai-steel.vercel.app)
 
 ---
 
@@ -14,10 +13,6 @@
 Studio AI adalah dashboard satu-halaman: isi brief singkat (nama produk, industri, tone), AI generate 2-3 varian copy (headline/subheadline/CTA) + rekomendasi tema visual (palet warna + pasangan font), lalu langsung dirender di Live Preview Panel dengan animasi staged.
 
 Dibuat sebagai portofolio untuk menunjukkan integrasi AI API secara *product-thinking* (bukan sekadar wrapper API) + kemampuan UI/UX (real-time preview, micro-interaction, empty/loading state yang didesain).
-
-## Screenshot
-
-_(Tambahkan screenshot/GIF demo Live Preview Panel kamu di sini — bisa pakai salah satu dari testing sebelumnya, atau rekam ulang layar `localhost:3000` pas lagi generate.)_
 
 ## Arsitektur Singkat
 
@@ -35,7 +30,6 @@ User isi form (nama produk, industri, tone)
   -> Render: varian copy + swatch warna + Live Preview (animasi Framer Motion)
 ```
 
-Detail lengkap ada di `Struktur_Website_Studio_AI_v1.1.docx` (dokumen perencanaan asli project ini).
 
 ## Cara Install & Jalankan Lokal
 
@@ -80,14 +74,10 @@ npm test
 
 Semua gratis di tier awal masing-masing. Ganti/tambah API key tinggal edit `.env.local`, tidak perlu ubah kode — logic pemilihan provider ada di `src/lib/aiProvider.js`.
 
-## Trade-off Desain (bahan cerita interview)
+## Trade-off Desain
 
 - **Kenapa Claude Haiku, bukan model besar?** Task-nya (generate copy + tema pendek) tidak butuh reasoning berat; Haiku cukup akurat, jauh lebih murah & cepat — cocok untuk demo interaktif real-time.
 - **Kenapa fallback 3 lapis (Anthropic → Gemini → Groq)?** Supaya demo tetap jalan walau salah satu provider kena rate limit/kredit habis saat interview — reliability tanpa nambah biaya.
 - **Kenapa single-page dashboard, bukan multi-halaman?** Fokus scope ke satu interaksi inti (brief → generate → preview) yang bisa didemo dalam <1 menit ke recruiter, daripada melebar ke banyak halaman.
 - **Kenapa AI wajib kasih `reasoning` (alasan pilih warna/font)?** Supaya AI kelihatan "mikir" berdasarkan brief, bukan random generate — sekaligus jadi fitur transparansi (`theme.reasoning`, ditampilkan lewat tooltip ✨).
 - **Kenapa ada rate limiter + sanitasi input padahal tanpa login?** Karena siapa saja bisa buka link publik ini dan menekan tombol Generate — tanpa guard, biaya API bisa bengkak walau kecil, dan rawan prompt injection lewat kolom nama produk.
-
----
-
-*Dokumen perencanaan lengkap: `Struktur_Website_Studio_AI_v1.1.docx`*
