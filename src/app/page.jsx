@@ -104,7 +104,7 @@ export default function DashboardPage() {
         <a href="https://github.com/" className="hover:text-secondary transition-all duration-200">
           Source Code
         </a>
-        <span>Powered by Claude API</span>
+        <span>Powered by AI</span>
       </footer>
     </main>
   );
