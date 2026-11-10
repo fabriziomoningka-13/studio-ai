@@ -1,5 +1,7 @@
 # Studio AI
 
+🔗 **Live Demo:** https://studio-ai-steel.vercel.app
+
 **Generator copy & tema landing page instan.** Isi brief singkat, lalu AI membuatkan draf headline, subheadline, CTA, palet warna, dan pasangan font, lengkap dengan live preview yang "membangun diri" secara animasi.
 
 Studio AI adalah project portofolio yang menggabungkan web development, UI/UX design, dan integrasi AI API dengan pendekatan product-thinking: bukan sekadar wrapper API, tetapi tool fungsional dengan fallback provider, validasi output, dan kontrol keamanan dasar.
